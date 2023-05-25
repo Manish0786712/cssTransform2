@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Transform Temple</title>
+    <style>
+        body{
+            width: 280px;height: auto;
+             position: relative;
+        }
+       div{
+            box-shadow:0px 0px 10px black;
+            width: 260px;height: 195px;
+            margin: 70px auto;
+            position:absolute;
+            overflow: hidden;
+        }
+div:hover{
+    width: inherit;
+    height: inherit;
+    transition: all 1s linear 1s;
+    filter: grayscale(100%);
+}
+div:hover>img{
+    filter: grayscale(0%);
+    transform:scale(1.2,1.2)
+}
+div>#wrapper{
+    background-color: rgba(255, 0, 10, 0.833);
+    position: absolute;
+    top: -70px;
+    left: 0px;
+    transition: all 1s linear 5s;
+}
+div:hover>#wrapper{
+    transform: translateY(-100%);
+}
+div#left{
+    background-color: blue;
+    position: absolute;
+    top: -70px;
+    left: 0px;
+    width: 50%;
+    transition: all 1s linear 0s;
+    transform-origin: left;
+}
+div:hover>#left{
+    transform: perspective(200px)rotateY(90deg);
+}
+div#right{
+    background-color:yellow;
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    width: 50%;
+    transition: all 1s linear 0s;
+    transform-origin: right;
+}
+div:hover>#right{
+    transform: perspective(200px)rotateY(-90deg);
+}
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <img src="../css_BoxModel.html/images.jpg" alt="">
+        <div id="left"></div>
+        <div id="right"></div>
+    </div>
+</body>
+</html>
